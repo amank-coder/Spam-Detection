@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spam Detection</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script>
+        window.onload = function() {
+            // Restore the input text if available
+            var inputText = localStorage.getItem('inputText');
+            if (inputText) {
+                document.getElementById('text').value = inputText;
+            }
+        };
+
+        function submitForm() {
+            // Store the input text in localStorage
+            var inputText = document.getElementById('text').value;
+            localStorage.setItem('inputText', inputText);
+        }
+    </script>
+</head>
+<body>
+    <h1 class="heading">Email Spam Detection</h1>
+    <h4>- Aman Konchgamey(21BBS0015)</h4>
+    <form action="/predict" method="post" onsubmit="submitForm()">
+        <label for="text" class="texti">Enter the message:</label><br><br>
+        <textarea id="text" name="text" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Predict">
+    </form> 
+    {% if prediction == 'Spam mail' %}
+    <h2 style="color: red">Result: {{ prediction }}</h2>
+    {% else %}
+    <h2 style="color: green">Result: {{ prediction }}</h2>
+    {% endif %}
+
+
+</body>
+</html>

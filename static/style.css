@@ -1,0 +1,25 @@
+body{
+    background: #000;
+    color:white;
+    text-align: center;
+}
+.texti{
+    font-size: 22px;
+}
+
+input{
+    padding: 5px;
+}
+textarea {
+    color: white; /* Change to your desired color */
+    background: transparent;
+    border: 2px solid white;
+    width: 400px;
+    height: 250px;
+}
+.resr{
+    color: red;
+}
+.resg{
+    color: green;
+}
